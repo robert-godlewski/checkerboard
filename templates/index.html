@@ -9,7 +9,7 @@
     href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% for x in range(0, 8): %}
+    {% for x in range(0,rows): %}
         <div class="row">
             {% for y in range(0, 8): %}
                 {% if x % 2 == 0 and y % 2 == 0 %} 
