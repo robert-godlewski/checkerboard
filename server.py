@@ -21,8 +21,16 @@ def board_adjust_size(x, y):
     return render_template("index.html", 
         rows=max_rows, columns=max_columns, color1="red", color2="black")
 
+@app.route('/<x>/<y>/<color1>')
+def board_adjust_size_a_color(x, y, color1):
+    max_rows = int(x)
+    max_columns = int(y)
+    color1_str = str(color1)
+    return render_template("index.html", 
+        rows=max_rows, columns=max_columns, color1=color1_str, color2="black")
+
 @app.route('/<x>/<y>/<color1>/<color2>')
-def board_adjust_size_color(x, y, color1, color2):
+def board_adjust_size_both_colors(x, y, color1, color2):
     max_rows = int(x)
     max_columns = int(y)
     color1_str = str(color1)
